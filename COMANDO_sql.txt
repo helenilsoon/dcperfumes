@@ -1,0 +1,53 @@
+insert into tb_marcas (nome) values 
+("UDV"),
+("Parfums Pergolèse"),
+("Ted Lapidus"),
+("Byphasse"),
+("Jeanne Arthes"),
+("Prestige"),
+("Marina de Bourbon"),
+("Arom"),
+("Evaflor"),
+("Pascal Morabito"),
+("Ferrari"),
+("Joli Joli Banho"),
+("Arno Sorel"),
+("Molyneux"),
+("Swiss Army"),
+("Joli Joli Makeup"),
+("Cuba"),
+("Women’secret"),
+("1902 Berdoues"),
+("New Brand"), 
+("Grès"),
+("Cadentia "),
+("Parfuns Café"),
+("Jacques Bogart "),
+("Christine D. Colônia"),
+("Carole Daver"),
+("Jacomo "),
+("Jardim de France")
+
+
+
+
+/// criando TABELA PRODUTOS
+
+CREATE TABLE tb_produtos (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    cod_produto INT NOT NULL,
+    ml INT DEFAULT NULL,
+    classificao INT DEFAULT NULL,
+    sexo CHAR(1) DEFAULT NULL,
+    marcas INT DEFAULT NULL,
+    nome VARCHAR(100) DEFAULT NULL,
+    img VARCHAR(100) DEFAULT NULL,
+    valor_catalogo FLOAT DEFAULT NULL,
+    valor_venda FLOAT DEFAULT NULL,
+    lucro_a_vista FLOAT DEFAULT NULL,
+    lucro_2x FLOAT DEFAULT NULL,
+    lucro_3x FLOAT DEFAULT NULL,
+    lucro_4x FLOAT DEFAULT NULL,
+    lucro_5x FLOAT DEFAULT NULL,
+    lucro_6x FLOAT DEFAULT NULL
+)
