@@ -44,19 +44,19 @@ $res = mysqli_query($link, $sql);
         <br>
         <div class="form_box_campo">
             <div>
-                <label for="">Codigo:</label><br>
-                <input type="number" class="form_cadProd-campo" id="f_cod" name="f_cod" id="">
+                <label for="f_cod">Codigo:</label><br>
+                <input type="number" class="form_cadProd-campo" id="f_cod" name="f_cod" id="f_cod" required placeholder="ex: 3456" autofocus>
             </div>
         </div>
         <div class="form_box_campo">
             <div>
-                <label for="">Nome:</label><br>
-                <input type="text" class="form_cadProd-campo" name="f_nome" id="">
+                <label for="f_nome">Nome:</label><br>
+                <input type="text" class="form_cadProd-campo" name="f_nome" id="f_nom" required placeholder=" Nome do produto">
             </div>
             <div class="ml">
-                <label for="">ml</label><br>
-                <select class="select" name="f_ml">
-                    <option value="">Selecione</option>
+                <label for="f_ml">ml</label><br>
+                <select class="select" name="f_ml" required>
+                    <option value="" >Selecione</option>
                     <option value="30ml">30ml</option>
                     <option value="50ml">50ml</option>
                     <option value="75ml">75ml</option>
@@ -71,8 +71,8 @@ $res = mysqli_query($link, $sql);
         </div>
         <div class="form_box_campo">
             <div>
-                <label for="marcas">Marcas</label><br>
-                <select class="select" name="f_marcas" id="marcas">
+                <label for="f_marcas">Marcas</label><br>
+                <select class="select" name="f_marcas" id="f_marcas" required>
                     <option value="">Selecione</option>
                     <?php
 if ($res) {
@@ -85,8 +85,8 @@ if ($res) {
                 </select>
             </div>
             <div class="form_sexo">
-                <label for="">sexo</label><br>
-                <select class="select" name="f_sexo">
+                <label for="f_sexo">sexo</label><br>
+                <select class="select" name="f_sexo" id="f_sexo"required>
                     <option value="">Selecione</option>
                     <option>MASCULINO</option>
                     <option>FEMININO</option>
@@ -97,7 +97,7 @@ if ($res) {
         <div class="form_box_campo">
             <div>
                 <label for="f_classificacao">Classificação</label><br>
-                <select class="select" name="f_classi">
+                <select class="select" name="f_classi" required id="f_classificacao">
                     <option value="">Selecione</option>
 
                     <option value="EDT">EDT - Eau de Toilette</option>
@@ -112,41 +112,71 @@ if ($res) {
 
         <div class="form_box_campo">
             <div>
-                <label for="">Valor no Catalogo:</label><br>
-                R$:<input type="number"  step="any"class="form_cadProd-campo" name="f_valorCatalogo" id="f_valorCatalogo">
+                <label for="f_valorCatalogo">Valor no Catalogo:</label><br>
+                R$:<input type="number"  step="any"class="form_cadProd-campo" name="f_valorCatalogo" id="f_valorCatalogo" required placeholder="ex: R$35.78 ">
             </div>
             <div>
                 <label for="">Valor p/ Venda:</label><br>
-                R$:<input type="text"     class="form_cadProd-campo"  name="f_valorVenda" id="f_valorVenda">
+                R$:<input type="number"  step="any"   class="form_cadProd-campo"  name="f_valorVenda" id="f_valorVenda" placeholder="ex: R$35.78">
                 <br>
-                <span style="color:#ccc;font-size:0.7em;">preenchido automaticamente</span>
+                <span class="f_aviso">preenchido automaticamente</span>
 
             </div>
             <div>
                 <label for="">Valor de compra:</label><br>
-                R$:<input type="number"  step="any"  class="form_cadProd-campo" name="f_valorCompra" id="f_valorCompra">
+                R$:<input type="number"  step="any"  class="form_cadProd-campo" name="f_valorCompra" id="f_valorCompra" placeholder="R$ 00.00">
                 <br>
-                <span style="color:#ccc;font-size:0.7em;">preenchido automaticamente</span>
+                <span class="f_aviso">preenchido automaticamente</span>
 
             </div>
         </div>
         <div class="form_box_campo">
-            <label for="">
-                <input type="file" name="f_file" id="" accept=".png,.jpg,.gif,.jpeg">
+
+               <div>
+                <label for="f_file">Escolha uma imagem:</label><br>
+                <input type="file" name="f_file" id="f_file" accept=".png,.jpg,.gif,.jpeg"><br>
+                <span class="f_aviso">Aceitos somente:jpg,png,gif max:10MB</span>
+                <div id="valor_img">
+
+                </div>
+            </div>
         </div>
-            <div></div>
-        <div class="form_box_campo">
-            <label for="">
+
+
+                <div class="f_btn">
                 <input type="submit" class="f_cadProd-btn" name="f_btn" value="Cadastrar">
                 <input type="reset" class="f_cadProd-btn" value="Limpar">
+                </div>
 
-        </div>
 
 
     </form>
 
 </div>
 
-<?php
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
 
-echo "<img src='{$img}'>";
+$(document).ready(function(){
+    $('input:file').change(function(){
+
+        var name=this.files[0].name;
+        var tamanho= this.files[0].size;
+        var tipo =this.files[0].type;
+        console.log(this.files[0]);
+        //tamanho = parseFloat((tamanho/1024).toFixed(4));
+
+        $('#valor_img').html(
+            "Nome: "+name+"<br>"+"Tipo: "+tipo+"<br>"+"Tamanho: "+tamanho+"MB"
+
+        );
+    });
+
+});
+// $('input[type="file"]').change(function(){
+//         var file = this.files[0];
+//         $("#test").append('Filename : ' + file.name + '<br />Filesize : ' + file.size);
+// });
+
+
+ </script>

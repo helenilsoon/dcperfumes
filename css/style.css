@@ -16,6 +16,13 @@ body {
     padding: 5px;
 }
 
+.f_aviso {
+    color: #747d8c;
+    font-size: 0.8em;
+    margin: 5px;
+    padding-top: 5px;
+}
+
 .menu {
     width: 100%;
     background: #000;
@@ -259,7 +266,7 @@ body {
 
 .container-main {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     background: #ecf0f1;
 }
 
@@ -355,7 +362,7 @@ body {
 }
 
 .container-painel-produto {
-    width: 80%;
+    width: 100%;
 }
 
 .container-main .painel-header {
@@ -491,6 +498,7 @@ body {
 /* Pagina de Cadastro de Produto */
 
 .container-cadProduto {
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -498,6 +506,7 @@ body {
 }
 
 .container-cadProduto form {
+    margin-top: 20px;
     box-shadow: 0px 0px 2px #000;
     width: 80%;
     padding: 35px;
@@ -508,6 +517,7 @@ body {
 
 .form_box_campo {
     display: flex;
+    flex-wrap: wrap;
     margin: 10px;
     padding: 2px;
 }
@@ -551,14 +561,158 @@ body {
     padding-left: 5px;
 }
 
+.f_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .f_cadProd-btn {
-    background: #2ecc71;
-    width: 105px;
-    height: 35px;
+    background: #f1c40f;
+    width: 150px;
+    height: 40px;
+    margin: 10px 5px;
+    font-size: 1.2em;
     border: none;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
+}
+
+.f_cadProd-btn:hover {
+    background: #2ecc71;
+}
+
+
+/* pagina lista de produtos */
+
+table {
+    width: 90%;
+    margin: 0 auto;
+}
+
+table th {
+    background-color: #000;
+    color: #f1c40f;
+    padding: 20px 0;
+}
+
+table,
+th,
+td {
+    border: 1px solid #747d8c;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 5px 10px;
+}
+
+.valor_cvc {
+    text-align: center;
+}
+
+table tbody tr {
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: #747d8c;
+    padding: 10px;
+    color: #fff;
+}
+
+th:nth-child(10),
+td:nth-child(-n+2),
+td:nth-child(n+8) {
+    text-align: center;
+}
+
+
+/* pagina de produtos detalhes */
+
+.pg-produto {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+    /* border: 1px solid #e74c3c; */
+}
+
+.pg-produto h1 {
+    margin: 20px 30px;
+}
+
+.container-pg-produto {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.pg-produto-img {
+    width: 40%;
+    padding: 30px 20px;
+    background: #fff;
+    box-shadow: 1px 1px 3px #ccc;
+}
+
+.pg-produto-img img {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.pg-produto-info {
+    width: 50%;
+    padding: 20px 0 10px 15px;
+    box-shadow: 1px 1px 3px #ccc;
+}
+
+.pg-produto .valor-compra {
+    background: #e74c3c;
+    color: #ecf0f1;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    width: 50%;
+}
+
+.pg-produto .valor-venda {
+    background: #2ecc71;
+    padding: 15px 10px;
+    border-radius: 5px;
+    margin: 20px auto;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+
+/* Rodape */
+
+.rodape {
+    width: 100%;
+    background: #000;
+    height: 250px;
+}
+
+footer {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 230px;
+}
+
+.rodape img {
+    width: 15%;
+    margin: 30px;
+}
+
+.rodape .copy {
+    color: #fff;
+    text-align: center;
 }
 
 @media screen and (max-width:900px) {

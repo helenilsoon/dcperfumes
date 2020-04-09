@@ -1,17 +1,16 @@
 <?php
 session_start();
 if (isset($_SESSION['user'])) {
-	$usuario = $_SESSION['user'];
+    $usuario = $_SESSION['user'];
 } else {
-	header("location: index.php");
-	die;
+    header("location: index.php");
+    die;
 }
 
-require_once("con.php");
+require_once "con.php";
 
 $con = new Con();
 $link = $con->conectar();
-
 
 // Saber a Quantida de Regtro
 $qtd_produto = "SELECT * FROM tb_produtos "; //Quantidades produto
@@ -21,26 +20,21 @@ $qtd_produto .= "ORDER BY id DESC limit 1";
 
 $resProdutos = mysqli_query($link, $qtd_produto);
 if ($produto = mysqli_fetch_assoc($resProdutos)) {
-	$cod_produto = $produto['cod_produto'];
-	$ml = $produto['ml'];
-	$classificao = $produto['classificao'];
-	$sexo = $produto['sexo'];
-	$marcas = $produto['marcas'];
-	$nome = $produto['nome'];
-	$img = $produto['img'];
-	$valor_catalogo = $produto['valor_catalogo'];
-	$valor_compra = $produto['valor_compra'];
-	$valor_venda = $produto['valor_venda'];
+    $cod_produto = $produto['cod_produto'];
+    $ml = $produto['ml'];
+    $classificao = $produto['classificao'];
+    $sexo = $produto['sexo'];
+    $marcas = $produto['marcas'];
+    $nome = $produto['nome'];
+    $img = $produto['img'];
+    $valor_catalogo = $produto['valor_catalogo'];
+    $valor_compra = $produto['valor_compra'];
+    $valor_venda = $produto['valor_venda'];
 }
-
-
 
 $qtd_marcas = "	SELECT * FROM tb_marcas"; //Quantidade marcas
 $resMarcas = mysqli_query($link, $qtd_marcas); //query de consulta
 $rowMarcas = mysqli_affected_rows($link);
-
-
-
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +53,7 @@ $rowMarcas = mysqli_affected_rows($link);
 </head>
 
 <body>
-	<?php require_once("menu.php"); ?>
+	<?php require_once "menu.php";?>
 
 	<main>
 
@@ -111,7 +105,7 @@ $rowMarcas = mysqli_affected_rows($link);
 
 			<div class="container-painel-produto">
 				<div class="painel-header">
-					<h1>Olá <?= $usuario ?></h1>
+					<h1>Olá <?=$usuario?></h1>
 				</div>
 
 				<div class="pag">
@@ -128,20 +122,20 @@ $rowMarcas = mysqli_affected_rows($link);
 
 							</div>
 							<div class="ult-info-produto">
-								<p class="ult-nome-produto"> <?= $nome ?> de <?= $ml ?></p>
-								<p class="ult-valor-compra">valor de compra R$<?= $valor_compra ?></p>
-								<p class="ult-valor-venda"> R$<?= $valor_venda ?></p>
+								<p class="ult-nome-produto"> <?=$nome?> de <?=$ml?></p>
+								<p class="ult-valor-compra">valor de compra R$<?=$valor_compra?></p>
+								<p class="ult-valor-venda"> R$<?=$valor_venda?></p>
 
 							</div>
 						</div>
 					</div>
 					<div class="caixa painel-qtd-produto">
-						<p>produtos registrados</p>
-						<spam><?= $rowsProtudos ?></spam>
+						<a href="lista-produtos.php"><p>produtos registrados</p></a>
+						<spam><?=$rowsProtudos?></spam>
 					</div>
 					<div class="caixa painel-marcas">
 						<p>Macas registrados</p>
-						<spam><?= $rowMarcas ?></spam>
+						<spam><?=$rowMarcas?></spam>
 					</div>
 
 					<div class=" caixa painel-m">
@@ -161,7 +155,7 @@ $rowMarcas = mysqli_affected_rows($link);
 	<!--main-->
 
 
-	<?php require_once("rodape.php"); ?>
+	<?php require_once "rodape.php";?>
 
 
 </body>

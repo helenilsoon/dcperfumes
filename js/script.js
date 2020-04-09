@@ -19,7 +19,9 @@ $(document).ready(function() {
     });
 
 
-    $('pesquisa').submit(function() { return false });
+    $('pesquisa').submit(function() {
+        return false
+    });
 
     //login
 
@@ -34,17 +36,32 @@ $(document).ready(function() {
     $('.close').click(function() {
         //animate({propriedade},duration,easign,complete)
         if (menu.css("width") == "64px") {
-            menu.animate({ width: "201px" });
-            close.animate({ right: "-150px" });
+            menu.animate({
+                width: "301px"
+            });
+            close.animate({
+                right: "-150px"
+            });
             close.slideDown().html("x");
-            a.animate({ left: "0" })
+            a.animate({
+                left: "0"
+            })
             icon.css("display", "none");
         } else {
-            menu.animate({ width: "64px" });
-            close.animate({ right: "0" });
+            menu.animate({
+                width: "64px"
+            });
+            close.animate({
+                right: "0"
+            });
             close.slideDown().html("&equiv;");
-            a.animate({ left: "-200px" });
-            icon.css({ "display": "flex", "right": "-175px" });
+            a.animate({
+                left: "-200px"
+            });
+            icon.css({
+                "display": "flex",
+                "right": "-175px"
+            });
         }
     });
     // carregar paginas
