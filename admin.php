@@ -63,7 +63,7 @@ $rowMarcas = mysqli_affected_rows($link);
 
 				<span class="close">&equiv;</span>
 
-				<a class="painel-a" href="">Produtos
+				<a class="painel-a" href="#" id="lista-produtos">Produtos
 					<span class="menu-icon ">
 						<img src="img/icon/perfume.svg" alt="">
 					</span>

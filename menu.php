@@ -9,7 +9,6 @@ switch ($erro) {
     case 'login_incorreto':
         $erro = "Login ou senha incorreto! :(";
         break;
-
     default:
         $erro = "";
         break;
@@ -30,14 +29,13 @@ if ($usuario !== "") {
     echo "<a href=''>$usuario</a>";
     echo "<a href='sair.php'>Sair</a>";
 } else {
-    echo "<a onmouseover='entrar()'' >LOGIN</a>";
+    echo "<a href='#'id='login' >LOGIN</a>";
 }
-
 ?>
-			<div class="login" id="login">
+			<div class="login">
 				<div class="icon-quadrado"></div>
 				<h2>Entrar</h2>
-				<form action="autentication.php" method="POST">
+				<form action="autentication.php" method="POST" id="f_login">
 					<div>
 						<label for="username">Username:</label>
 						<input type="text" class="f_login_campo" name="username" id="usename" autocomplete="off">
@@ -60,26 +58,19 @@ if ($usuario !== "") {
 
 
 </div>
-
-
-
 <script>
-	var ele = document.getElementById('login');
-	ele.addEventListener("mouseleave", esconder);
-	var erro = document.querySelector('.erro');
-	if (erro) {
-		$('.login').slideDown();
-	} else {
-		esconder();
-	}
 
-	function entrar() {
-		$('.login').slideDown();
-	}
 
-	function esconder() {
-		$('.login').css({
-			"display": "none"
-		});
-	}
+    //login
+
+
+    // $('#login').click(function() {
+	// 		alert("vc clicou");
+
+    //     // if ($('#login').hide()) {
+    //     //     $('#login').slideDown();
+    //     // } else {
+    //     //     $('.#login').hide();
+    //     // }
+    // });
 </script>
