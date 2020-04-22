@@ -40,10 +40,11 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : "";
 		<br>
 		<div class="ultimos-add">
 <?php
-require_once "UltimosProdutosAdc.php";
+require_once "RegistroProdutos.php";
 
-$ultimosProduto = new UltimosProdAdc();
-$ultimosProduto->ultProdAdc();
+$ultimosProduto = new RegistroProdutos();
+$ultimosProdAdc = $ultimosProduto->ultimosProdAdc();
+
 ?>
 
 		</div>
@@ -56,7 +57,7 @@ $ultimosProduto->ultProdAdc();
 
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script src='js/jquery-3.5.0.min.js'></script>
 <script src="js/script.js"></script>
 
 </html>

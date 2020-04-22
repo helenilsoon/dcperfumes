@@ -60,7 +60,14 @@ if ($res) {
             }
 
         });
-
+        
+        //    Voltar para pagina anterior
+      $('#btn_voltar').click(function() {
+        $('.pag').load("lista-produtos.php");
+        
+        $('.container-caixa').hide();
+        return false;
+    });
 
     });
 </script>
@@ -70,8 +77,12 @@ if ($res) {
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <div class="container-cadProduto">
+    <button id="btn_voltar">Voltar</button>
     <h1>Atualizar produto</h1>
+    
+    
     <form action="update_produto.php?id=<?=$id?>" method="POST" enctype="multipart/form-data">
+        
         <div class="i">
              <div class="img">
                     <img src="img/produtos/<?=$img?>" alt="">

@@ -2,9 +2,21 @@
 
 require_once "con.php";
 
-class UltimosProdAdc
+class RegistroProdutos
 {
-    public function ultProdAdc()
+    public function excluirProd($id) {
+        $con = new Con();
+        $link = $con->conectar();
+        $sql="DELETE FROM tb_produtos WHERE id= $id";
+        $res = mysqli_query($link, $sql);
+        if(mysqli_affected_rows($link)){
+            echo"Excluido com sucesso";
+        }else{
+            echo"ERRO AO EXCLUIR";
+        }
+        
+    }
+    public function ultimosProdAdc()
     {
 
         $con = new Con();

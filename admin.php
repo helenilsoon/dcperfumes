@@ -46,7 +46,7 @@ $rowMarcas = mysqli_affected_rows($link);
 	</script>
 	<title>Admin</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+	<script src='js/jquery-3.5.0.min.js'></script>
 
 
 
@@ -161,5 +161,6 @@ $rowMarcas = mysqli_affected_rows($link);
 </body>
 
 <script src="js/script.js"></script>
+
 
 </html>

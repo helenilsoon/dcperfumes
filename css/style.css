@@ -531,6 +531,18 @@ body {
     /* flex-direction: column; */
 }
 
+#btn_voltar{
+   padding: 10px 30px ;
+   border: 1px solid #e74c3c;
+   border-radius: 5px;
+   background: #e74c3c;
+   color: #fff;
+   position:relative;
+   left: -400px;
+   cursor: pointer;
+   
+}
+
 .form_box_campo {
     display: flex;
     flex-wrap: wrap;
