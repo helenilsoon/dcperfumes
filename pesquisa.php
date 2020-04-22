@@ -9,7 +9,6 @@ if (isset($_POST['f_search'])) {
         $con = new Con();
         $con = $con->conectar();
         $sql = "SELECT * FROM tb_produtos where MATCH (nome,marcas,ml,sexo) AGAINST ('{$pesquisa}*' IN BOOLEAN MODE) limit 20";
-        echo ($sql);
         $link = mysqli_query($con, $sql);
 
         if ($link) {
@@ -17,7 +16,7 @@ if (isset($_POST['f_search'])) {
             $valor = mysqli_affected_rows($con);
             echo "<div class='resultados'>" . $valor . " Resultados encontrados para '{$pesquisa}'</div>";
             while ($res = mysqli_fetch_assoc($link)) {
-
+                $id = $res['id'];
                 $cod_produto = $res['cod_produto'];
                 $ml = $res['ml'];
                 $classificao = $res['classificao'];
@@ -40,14 +39,15 @@ if (isset($_POST['f_search'])) {
 
 				<div class="produto">
 					<div class="img-produto">
-						<img src="<?=$img?>">
+						<img src="img/produtos/<?=$img?>">
 
 					</div>
 					<div class="info-produto">
+                    <a href="produto.php?id=<?=$id?>">
 						<p class="nome-produto"> <?=$nome?> de <?=$ml?> </p>
 						<p class="valor-compra">valor de compra R$<?=$valor_compra?></p>
 						<p class="valor-venda"> R$<?=$valor_venda?></p>
-
+                </a>
 					</div>
 				</div>
 

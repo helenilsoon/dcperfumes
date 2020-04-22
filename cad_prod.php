@@ -14,25 +14,25 @@ if (isset($_POST['f_btn'])) {
     $valorVenda = isset($_POST['f_valorVenda']) ? filter_var($_POST['f_valorVenda'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) : 0;
     $valorCompra = isset($_POST['f_valorCompra']) ? filter_var($_POST['f_valorCompra'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) : 0;
 
-    $fileImg = isset($_FILES['f_file']) ? $_FILES['f_file'] : "";
+    $fileImg = isset($_FILES['f_file']["name"]) ? $_FILES['f_file']['name'] : "";
 
     //array das exteção permitidas
     $exte = ['.jpg', '.gif', '.png', '.jpeg'];
 
-    $extesao = strtolower(substr($fileImg["name"], -4));
+    $extesao = strtolower(substr($_FILES['f_file']["name"], -4));
     //testando uma outra forma de pegar a esteção do arquivo
     // $file = $_FILES['f_file']['name'];
     // $png = pathinfo($file, PATHINFO_EXTENSION);
 
     //Testando se tem arquivo de imagem
-    if ($fileImg['name'] !== "") {
+    if ($_FILES['f_file']['name'] !== "") {
         if (in_array($extesao, $exte)) {
             //atribuiindo um novo nome para imagem
             $novoNomeImg = str_replace(" ", "-", $fileImg);
             //pasta da imagem
-            $pasta = "img/";
+            $pasta = __DIR__ . "/img/produtos/";
             //movendo da pasta temporaria para img/como novo nome
-            move_uploaded_file($fileImg, $pasta . $novoNome);
+            move_uploaded_file($_FILES['f_file']['tmp_name'], $pasta . $novoNomeImg);
 
         } else {
             echo "Exteção não pemitido";

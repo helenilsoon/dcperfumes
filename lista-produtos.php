@@ -21,6 +21,7 @@ if ($res) {
      <table>
              <thead>
                  <tr>
+                    <th></th>
                      <th class="valor_cvc">Quant</th>
                     <th class="valor_cvc" >Cod</th>
                      <th>Nome</th>
@@ -58,7 +59,9 @@ if ($res) {
         $data_cadastro = $r['data_cadastro'];
         ?>
         <!-- Celula de cada linha  -->
-                 <tr onclick="location.href='produto.php?id=<?=$id?>'">
+                 <tr onclick="location.href='produto_update.php?id=<?=$id?>'">
+                 <td><button>editar</button> <button>excluir</button></td>
+
                      <td><?=$id?></td>
                      <td><?=$cod_produto?></td>
                      <td><?=$nome?></td>
@@ -66,9 +69,9 @@ if ($res) {
                      <td><?=$marcas?></td>
                      <td><?=$classificao?></td>
                      <td><?=$sexo?></td>
-                     <td>R$<?=$valor_compra?></td>
-                     <td>R$<?=$valor_venda?></td>
-                     <td>R$<?=$valor_catalogo?></td>
+                     <td><?=$valor_compra?></td>
+                     <td><?=$valor_venda?></td>
+                     <td><?=$valor_catalogo?></td>
                  </tr>
 <?php
 } // fechamento do while

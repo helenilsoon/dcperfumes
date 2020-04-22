@@ -118,7 +118,7 @@ $rowMarcas = mysqli_affected_rows($link);
 						<p>Ultimos produtos adicionados</p>
 						<div class="ult-produto">
 							<div class="ult-img-produto">
-								<img src="img/one-man-show.jpeg">
+								<img src="img/produtos/<?=$img?>">
 
 							</div>
 							<div class="ult-info-produto">

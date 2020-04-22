@@ -50,7 +50,7 @@ if ($res) {
              <div class="container-pg-produto">
                 <div class="pg-produto-img">
                         <figure>
-                            <img src="img/one-man-show.jpeg" alt="">
+                            <img src="img/produtos/<?=$img?>" alt="">
                         </figure>
 
                     </div>

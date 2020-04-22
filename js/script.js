@@ -33,7 +33,9 @@ $(document).ready(function() {
 
         if (login.css("display") !== "none") {
             login.hide("slow", function() {});
-        } else { login.slideDown(300); }
+        } else {
+            login.slideDown(300);
+        }
     });
     var erro = $('.erro');
 
@@ -43,25 +45,6 @@ $(document).ready(function() {
         $('.login').hide();
     }
 
-    // ele.addEventListener("mouseleave", esconder);
-    // var erro = $('.erro');
-    // if (erro) {
-    //     $('.login').slideDown();
-    // } else {
-    //     esconder();
-    // }
-
-    // function entrar() {
-    //     $('.login').slideDown();
-    // }
-
-    // function esconder() {
-    //     $('.login').css({
-    //         "display": "none"
-    //     });
-    // }
-
-
     //menu lateral
     var menu = $(".painel-menu");
     var close = $('.close');
@@ -70,17 +53,32 @@ $(document).ready(function() {
     $('.close').click(function() {
         //animate({propriedade},duration,easign,complete)
         if (menu.css("width") == "64px") {
-            menu.animate({ width: "301px" });
-            close.animate({ right: "-150px" });
+            menu.animate({
+                width: "301px"
+            });
+            close.animate({
+                right: "-150px"
+            });
             close.slideDown().html("x");
-            a.animate({ left: "0" })
+            a.animate({
+                left: "0"
+            })
             icon.css("display", "none");
         } else {
-            menu.animate({ width: "64px" });
-            close.animate({ right: "0" });
+            menu.animate({
+                width: "64px"
+            });
+            close.animate({
+                right: "0"
+            });
             close.slideDown().html("&equiv;");
-            a.animate({ left: "-200px" });
-            icon.css({ "display": "flex", "right": "-175px" });
+            a.animate({
+                left: "-200px"
+            });
+            icon.css({
+                "display": "flex",
+                "right": "-175px"
+            });
         }
     });
     // carregar paginas atraves do menu

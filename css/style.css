@@ -214,6 +214,13 @@ body {
     height: 200px;
     background: 1px solid #000;
     background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.img-produto img {
+    width: 80%;
 }
 
 .produto .info-produto {
@@ -222,6 +229,11 @@ body {
 
 .produto .info-produto p {
     padding: 1px;
+}
+
+.info-produto a {
+    text-decoration: none;
+    color: #000;
 }
 
 .produto .nome-produto {
@@ -612,7 +624,7 @@ td {
 
 th,
 td {
-    padding: 5px 10px;
+    padding: 5px 0px;
 }
 
 table td {
@@ -645,6 +657,20 @@ td:nth-child(9) {
 
 td:nth-child(9):hover {
     background: #2ecc71;
+}
+
+
+/* pagina de atualização de produtos */
+
+.img {
+    width: 300px;
+    box-shadow: 0px 0px 2px #000;
+    height: 300px;
+    margin: 10px;
+}
+
+.img img {
+    width: 100%;
 }
 
 
