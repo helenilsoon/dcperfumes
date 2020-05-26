@@ -1,63 +1,39 @@
 <?php
+// Mostrando Erros
+ini_set('display_errors',1);
 
-$erro = isset($_GET['erro']) ? $_GET['erro'] : "";
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
+require_once 'Core/Core.php';
 
-<head>
-	<meta charset="utf-8">
-	<title>Dcperfume | Catalogo online</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+$url = new Core();
+$url= $url->start($_GET);
 
-</head>
 
-<body>
-	<!-- Menu -->
-	<?php require_once "menu.php";?>
+//require_once 'App/Controllers/ErrorController.php';
+//require_once 'App/Controllers/HomeController.php';
 
-	<div class="container">
-		<div class="header">
-		<!-- Formulario de pesquisa -->
-			<form id="pesquisa">
-				<div class="f_conjunto">
-					<input type="search" name="f_search" id="search" placeholder="Qual perfume? ">
-					<button id="button">Pesquisar</button>
-				</div>
-			</form>
 
-		</div>
+//require_once __DIR__ . '/vendor/autoload.php';
+//echo __DIR__;
+//
+//use App\Controllers\ErroController;
+//use App\Controllers\HomeController;
+////
+//use Core\Core;
 
-		<div class="main">
+//Inserindo template
+//$template = file_get_contents('Template/estrutura.html');
+//ob_start();
+//    $url = new Core();
+//    $url= $url->start($_GET);
+//$saida = ob_get_contents();
+//ob_end_clean();
+//$tpl = str_replace('{{titulo}}',$saida,$template);
+//
+//echo $tpl;
 
-			<div class="container-produto">
-			</div>
-
-		</div>
-		<!-- Container dos ultimos produtos adiconados -->
-		<h1>Útimos adicionados</h1>
-		<br>
-		<div class="ultimos-add">
-<?php
-require_once "RegistroProdutos.php";
-
-$ultimosProduto = new RegistroProdutos();
-$ultimosProdAdc = $ultimosProduto->ultimosProdAdc();
-
-?>
-
-		</div>
+//var_dump($saida);
 
 
 
-
-	</div>
-	<?php require_once "rodape.php";?>
-
-
-</body>
-<script src='js/jquery-3.5.0.min.js'></script>
-<script src="js/script.js"></script>
-
-</html>
+//$home = new ErroController();
+//$home->index();
