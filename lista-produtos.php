@@ -1,3 +1,5 @@
+<link href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" rel="stylesheet">
+
 <?php
 
 session_start();
@@ -80,9 +82,9 @@ if (isset($_SESSION['user'])) {
         } // fechamento do while
         echo "</tbody>
         </table>
-        <div class='tbl_certeza'>Tem Certeza 
+        <div class='tbl_certeza' title='Tem certeza'> 
                             <button class='tbl_btnSim'>Sim</buttom>
-                            <button class='tbl_btnNao'>Nâo</buttom>
+                            
                          </div>
         </div>";
     } //fechamento do if
@@ -92,5 +94,57 @@ if (isset($_SESSION['user'])) {
 }
 
 ?>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+    integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+<script>
+//    botões da tabela para editar e excluir
+$('document').ready(function() {
+    // Página lista de perfumes
 
-<script src='js/script.js'></script>
+    //    Abrindo pagina de atualização
+    $('.tbl_btnEditar').click(function() {
+        var url = $(this).val();
+        $('.pag').load(url);
+
+        $('.container-caixa').hide();
+        return false;
+    });
+
+    //  botões que pergunta se o usuario tem certeza
+
+
+    $('.tbl_btnExcluir').click(function() {
+        var id = $(this).val();
+
+        $(".tbl_certeza").dialog({
+            autoOpen: false,
+            modal: true,
+            buttons: {
+                Cancelar: function() {
+                    $(this).dialog("close");
+                }
+            }
+        });
+        //            Abrindo a caixa de dialogo para pergunta do usuario
+        $('.tbl_certeza').dialog("open");
+
+        $('.tbl_btnSim').click(function() {
+            $.ajax({
+                url: 'ExcluirRegistro.php',
+                method: 'POST',
+                datatype: 'html',
+                data: {
+                    id: id
+                },
+                success: function(data) {
+                    alert(data);
+                    $('.pag').load("lista-produtos.php");
+                    $('.tbl_certeza').dialog("close");
+                }
+            });
+
+        });
+
+    });
+});
+</script>

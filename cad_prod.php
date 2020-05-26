@@ -48,7 +48,7 @@ if (isset($_POST['f_btn'])) {
     $link = $con->conectar();
 
     //inserindo no Banco de Dados
-    $sql = "INSERT INTO tb_produtos(cod_produto,ml,classificao,sexo,marcas,nome,img,valor_catalogo,valor_compra,valor_venda)";
+    $sql = "INSERT INTO tb_produtos(codProduto,ml,classificao,sexo,marcas,nome,img,valor_catalogo,valor_compra,valor_venda)";
     $sql .= "VALUES($cod,'$ml','$classi','$sexo','$marcas','$nome','$novoNomeImg',$valorCatalogo,$valorCompra,$valorVenda)";
     $res = mysqli_query($link, $sql);
     //se tiver afetado alguma linha retorna sucesso

@@ -39,6 +39,7 @@ $res = mysqli_query($link, $sql);
 
 <div class="container-cadProduto">
     <h1>Cadastro de produto</h1>
+    <button id="btn_voltar" >   <a href="admin.php">Voltar</a></button>
     <form action="cad_prod.php" method="POST" enctype="multipart/form-data">
 
         <br>
@@ -171,6 +172,7 @@ $(document).ready(function(){
 
         );
     });
+    
 
 });
 // $('input[type="file"]').change(function(){

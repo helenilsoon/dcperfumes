@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>{{titulo}} | {{subtitulo}}</title>
+    <link rel="stylesheet" type="text/css" href="../css/style-template.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+<!-- Menu -->
+<nav>
+    <div class='menu'>
+        <div class='cotainer-menu'>
+            <div class='logo'>
+                <img src='img/Nova_LOGO_ Dcperfumes_160x160.p.jpg'>
+            </div>
+            <div class='menu-link'>
+                <a href='index.php'>Inicio</a>
+
+                <a href='admin.php'>Admin</a>
+                {{usuario}}
+                {{logout}}
+                <a href='#'id='login' >LOGIN</a>
+
+
+<!--                formulario de login-->
+                <div class='login'>
+                    <div class='icon-quadrado'></div>
+                    <h2>Entrar</h2>
+
+                    <form action='autentication.php' method='POST' id='f_login'>
+                        <div>
+                            <label for='username'>Username:</label>
+                            <input type='text' class='f_login_campo' name='username' id='username' autocomplete='off'>
+                        </div>
+                        <div>
+                            <label for='senha'>Senha</label>
+                            <input type='password' class='f_login_campo' name='senha' id='senha'>
+                        </div>
+                        <input type='submit' name='btn-logar' class='btn-logar' value='entrar'>
+
+<!--                        Se tiver erro vai aparece mensagem de erro-->
+                        <div class='erro'>{{erro}}</div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</nav>
+
+
+<!--Fim Menu-->
+
+<div class="container">
+    <div class="header">
+        <!-- Formulario de pesquisa -->
+        <form id="pesquisa">
+            <div class="f_conjunto">
+                <input type="search" name="f_search" id="search" placeholder="Qual perfume? ">
+                <button id="button">Pesquisar</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="main">
+
+        <div class="container-produto">
+            {{resultadoPesquisa}}
+        </div>
+
+    </div>
+    <!-- Container dos ultimos produtos adiconados -->
+    <h1>Útimos adicionados</h1>
+    <br>
+    <div class="ultimos-add">
+    {{Produtos}}
+
+    </div>
+
+
+
+
+</div>
+
+    <div class="rodape">
+        <footer>
+            <div>
+                <img src="img/Nova_LOGO_ Dcperfumes_160x160.p.jpg" alt="">
+            </div>
+
+            div.
+
+        </footer>
+        <p class="copy">helenilson 2020&copy; mande in Brasil</p>
+
+    </div>
+
+
+
+</body>
+<script src='js/jquery-3.5.0.min.js'></script>
+<script src="js/script-template.js"></script>
+
+</html>

@@ -1,0 +1,45 @@
+<div class='cotainer-menu'>
+    <div class='logo'>
+        <img src='{{DIR_IMG}}Nova_LOGO_ Dcperfumes_160x160.p.jpg'>
+    </div>
+    <div class='menu-link'>
+        <a href='/'>Inicio</a>
+        <a href='/marcas'>Marcas</a>
+        <a href='/produtos'>Produtos</a>
+        <a href='/masculino'>Masculino</a>
+        <a href='/feminino'>Feminino</a>
+        {% if usuario != '' %}
+        <a href='/dashboard'>Admin</a>
+        <a>{{usuario}}</a>
+        <a href="dashboard/logout">Sair</a>
+
+        {% else %}
+        <a id='login'>LOGIN</a>
+        {% endif %}
+
+        <!--                formulario de login-->
+        <div class='login'>
+            <div class='icon-quadrado'></div>
+            <h2>Entrar</h2>
+
+            <form action='{{URL_BASE}}login/autentication' method='POST' id='f_login'>
+
+                <div>
+                    <label for='username'>Username:</label>
+                    <input type='text' class='f_login_campo' name='username' id='username' required="required">
+                </div>
+                <div>
+                    <label for='senha'>Senha</label>
+                    <input type='password' class='f_login_campo' name='senha' id='senha' required='required'>
+                </div>
+                <input type='submit' name='btn-logar' class='btn-logar' value='entrar'>
+
+                <!-- Se tiver erro vai aparece mensagem de erro-->
+                {% if erro != '' %}
+                <div class='erro'>{{erro}}</div>
+                {% endif %}
+            </form>
+        </div>
+
+    </div>
+</div>

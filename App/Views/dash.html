@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="{{DIR_CSS}}style-template.css">
+
+
+
+
+</head>
+
+<body>
+    <!-- Menu -->
+    <nav>
+        <div class='menu'>
+
+
+            {{ include('menu.html') }}
+
+        </div>
+
+
+
+
+    </nav>
+
+
+    <!--Fim Menu-->
+
+    <main>
+
+
+        <div class="container-main">
+            <div class="painel-menu">
+
+                <span class="close">&equiv;</span>
+
+                <a class="painel-a" href="#" id="lista-produtos">Produtos
+                    <span class="menu-icon ">
+                        <img src="{{DIR_IMG}}/icon/perfume.svg" alt="">
+                    </span>
+                </a>
+
+                <a class="painel-a" href="">Marcas
+                    <span class="menu-icon">M</span>
+                </a>
+
+                <a class="painel-a" id="cadProduto" href="#">Cadastrar produtos
+                    <span class="menu-icon icon-add ">
+                        <img src="{{DIR_IMG}}add.svg" alt="">
+                    </span>
+                </a>
+
+                <a class="painel-a " href="">Cadastrar marcas
+                    <span class="menu-icon icon-add ">
+                        <img src="{{DIR_IMG}}/icon/add.svg" alt="">
+                    </span>
+                </a>
+
+                <a class="painel-a" href="">Usuarios
+                    <span class="menu-icon icon-user">
+                        <img src="{{DIR_IMG}}/icon/user.svg" alt="">
+                    </span>
+                </a>
+
+                <a class="painel-a" href="">Configuração
+                    <span class="menu-icon icon-user">
+                        <img src="{{DIR_IMG}}/icon/settings.svg" alt="Configurções">
+                    </span>
+
+                </a>
+
+
+
+            </div>
+
+
+            <div class="container-painel-produto">
+                <div class="painel-header">
+                    <h1>Olá {{usuario}}</h1>
+                </div>
+
+                <div class="pag">
+
+                </div>
+                <div class="container-caixa">
+
+
+                    <div class="painel-produto">
+                        <p>Ultimos produtos adicionados</p>
+                        <div class="ult-produto">
+                            <div class="ult-img-produto">
+                                <img src="{{DIR_IMG}}/produtos/<?=$img?>">
+
+                            </div>
+                            <div class="ult-info-produto">
+                                <p class="ult-nome-produto"> <?=$nome?> de <?=$ml?></p>
+                                <p class="ult-valor-compra">valor de compra R$<?=$valor_compra?></p>
+                                <p class="ult-valor-venda"> R$<?=$valor_venda?></p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="caixa painel-qtd-produto">
+                        <a href="lista-produtos.php">
+                            <p>produtos registrados</p>
+                        </a>
+                        <spam><?=$rowsProtudos?></spam>
+                    </div>
+                    <div class="caixa painel-marcas">
+                        <p>Macas registrados</p>
+                        <spam><?=$rowMarcas?></spam>
+                    </div>
+
+                    <div class=" caixa painel-m">
+                        painel-marcas
+                    </div>
+                    <div class="caixa painel-r">
+                        painel-marcas
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </main>
+    <!--main-->
+
+
+
+</body>
+
+<script src='{{DIR_JS}}jquery-3.5.0.min.js'></script>
+<script src="{{DIR_CSS}}script-template.js"></script>
+
+
+</html>

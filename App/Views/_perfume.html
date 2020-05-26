@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{perfume.nome}} de {{perfume.ml}} | {{nomesite}}</title>
+    <link rel="stylesheet" type="text/css" href="{{DIR_CSS}}style-template.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="author" content="helenilson Olveira ">
+    <meta name="Keywords"
+        content="{{perfume.nome}},{{perfume.marcas}},{{perfume.sexo}},{{perfume.ml}},perfumes importados,Manaus">
+    <meta name="description"
+        content="Perfume {{perfume.sexo}} {{perfume.nome}} de {{perfume.ml}}  da marca {{perfume.marcas}} o melhor preço de Manaus apenas R${{perfume.valorVenda}} ">
+
+</head>
+
+<body>
+    <!-- Menu -->
+    <nav>
+        <div class='menu'>
+            {{ include('menu.html') }}
+        </div>
+    </nav>
+    <!--Fim Menu-->
+
+    <div class="pg-produto">
+        <h1> {{perfume.nome}} </h1>
+        <div class="container-pg-produto">
+            <div class="pg-produto-img">
+                <figure>
+                    <img src="{{DIR_IMG}}produtos/{{perfume.img}}" alt="">
+                </figure>
+
+            </div>
+
+
+            <div class="pg-produto-info">
+                <div class="container-info">
+                    <p>Cod:{{perfume.codProduto}}</p>
+                    <h4>Marca:{{perfume.marcas}}</h4>
+                    <h4>Nome: {{perfume.nome}} {{perfume.ml}}</h4>
+                    <p>Claxificação:{{perfume.classificao}}</p>
+                    <p>sexo:{{perfume.sexo}}</p>
+                    <p class="valor-compra">valor de compra: R${{perfume.valorCompra}}</p>
+                    <p class="valor-compra">valor de Catalogo: R${{perfume.valorCatalogo}}</p>
+
+
+                    <p class="valor-venda"> Valor P/venda: R${{perfume.valorVenda}}</p>
+
+                    <p>A entrega em Manaus e Grátis</p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="rodape">
+
+        {{ include ('rodape.html') }}
+    </div>
+
+
+
+</body>
+<script src='{{DIR_JS}}jquery-3.5.0.min.js'></script>
+<script src="{{DIR_JS}}script-template.js"></script>
+
+</html>

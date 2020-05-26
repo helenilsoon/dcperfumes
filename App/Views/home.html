@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{titulo}} | {{subtitulo}}</title>
+    <link rel="stylesheet" type="text/css" href='{{DIR_CSS}}style-template.css'>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="author" content="Helenilson Oliveira">
+    <link rel="shortcut icon" href="{{DIR_IMG}}dcpefumes_favicon.ico" type="image/x-icon">
+    <meta name="descripition"
+        content="Catalago online de perfumes importados em manaus,Fragrância Masculina e feminina">
+    <meta name="keywords" content="Perfumes,Fragrância, marcas,importados,online,masculino,feminino,100ml.30ml,50ml">
+</head>
+
+<body>
+
+    <!-- Menu -->
+    <nav>
+        <div class='menu'>
+
+            {{ include('menu.html') }}
+
+        </div>
+    </nav>
+    <!--Fim Menu-->
+
+    <div class="container">
+        <div class="header">
+            <!-- Formulario de pesquisa -->
+            <form id="pesquisa">
+                <div class="f_conjunto">
+                    <input type="search" name="f_search" id="search" placeholder="Qual perfume? ">
+                    <button id="button">Pesquisar</button>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="main">
+
+            <div class="container-produto">
+                {{resultadoPesquisa}}
+                {{usuario}}
+            </div>
+
+        </div>
+        <!-- Container dos ultimos produtos adiconados -->
+        <h1>Útimos adicionados</h1>
+        <br>
+        <div class="ultimos-add">
+            {% for p in produtos %}
+            <div class="produto">
+                <div class="img-produto">
+                    <img src="{{DIR_IMG}}produtos/{{p.img}}">
+
+                </div>
+                <div class="info-produto">
+                    <a href="/produto/perfume/{{p.url}}">
+                        <p class="nome-produto"> {{p.nome}} de {{p.ml}} </p>
+                        <p class="valor-compra">valor de compra R${{ p.valorCompra }}</p>
+                        <p class="valor-venda"> R${{p.valorVenda}}</p>
+
+
+
+                    </a>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+    <!-- Rodape -->
+    <div class="rodape">
+
+        {{ include ('rodape.html') }}
+
+    </div>
+
+
+
+</body>
+<script src="{{DIR_JS}}jquery-3.5.0.min.js"></script>
+<script src="{{DIR_JS}}script-template.js"></script>
+
+</html>

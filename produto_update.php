@@ -222,7 +222,7 @@ $(document).ready(function(){
         var name=this.files[0].name;
         var tamanho= this.files[0].size;
         var tipo =this.files[0].type;
-        console.log(this.files[0]);
+        
         //tamanho = parseFloat((tamanho/1024).toFixed(4));
 
         $('#valor_img').html(

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{titulo}} | {{subtitulo}}</title>
+    <link rel="stylesheet" type="text/css" href="{{DIR_CSS}}style-template.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+    <!-- Menu -->
+    <nav>
+        <div class='menu'>
+
+
+            <!--        {{ include('menu.html') }}-->
+            {% block menu %}
+
+            {% endblock %}
+
+        </div>
+
+
+
+
+    </nav>
+
+
+    <!--Fim Menu-->
+
+    <div class="container">
+        <div class="header">
+            <!-- Formulario de pesquisa -->
+            <form id="pesquisa">
+                <div class="f_conjunto">
+                    <input type="search" name="f_search" id="search" placeholder="Qual perfume? ">
+                    <button id="button">Pesquisar</button>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="main">
+
+            <div class="container-produto">
+                {{resultadoPesquisa}}
+                {{usuario}}
+            </div>
+
+        </div>
+        <!-- Container dos ultimos produtos adiconados -->
+        <h1>Útimos adicionados</h1>
+        <br>
+        <div class="ultimos-add">
+            {{Produtos}}
+
+        </div>
+
+
+
+
+    </div>
+
+    <div class="rodape">
+
+        {{ include ('rodape.html') }}
+    </div>
+
+
+
+</body>
+<script src='{{DIR_JS}}jquery-3.5.0.min.js'></script>
+<script src="{{DIR_JS}}script-template.js"></script>
+
+</html>

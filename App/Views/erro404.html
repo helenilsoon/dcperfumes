@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{titulo}} | {{subtitulo}}</title>
+    <link rel="stylesheet" type="text/css" href="{{DIR_CSS}}style-template.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+    <!-- Menu -->
+    <nav>
+        <div class='menu'>
+
+            {{ include('menu.html') }}
+
+        </div>
+    </nav>
+    <!--Fim Menu-->
+
+    <div class="container">
+        <h1 style="text-align: center;font-size: 3em;"> ERROR</h1>
+        <h1 style="text-align: center;"> Página não existe :(</h1>
+        <div class="header">
+            <div class="erro404" style="margin:0 auto;width: 40%;display: flex;justify-content: center; ">
+                <img src="{{DIR_IMG}}icon/erro404.svg" alt="" width="300">
+            </div>
+        </div>
+
+        <!-- Rodape -->
+        <div class="rodape">
+
+            {{ include ('rodape.html') }}
+        </div>
+    </div>
+
+
+</body>
+<script src='{{DIR_JS}}jquery-3.5.0.min.js'></script>
+<script src="{{DIR_JS}}script-template.js"></script>
+
+</html>

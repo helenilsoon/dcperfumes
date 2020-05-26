@@ -65,7 +65,7 @@ if (isset($_POST['f_btn'])) {
         }
 
 //inserindo no Banco de Dados
-        $sql = "UPDATE tb_produtos set cod_produto=$cod,ml='$ml',classificao='$classi',sexo='$sexo',marcas='$marcas',nome='$nome',img='$novoNomeImg',valor_catalogo=$valorCatalogo,valor_compra=$valorCompra,valor_venda=$valorVenda where id = $id";
+        $sql = "UPDATE tb_produtos set codProduto=$cod,ml='$ml',classificao='$classi',sexo='$sexo',marcas='$marcas',nome='$nome',img='$novoNomeImg',valor_catalogo=$valorCatalogo,valor_compra=$valorCompra,valor_venda=$valorVenda where id = $id";
         echo $sql;
         $res = mysqli_query($link, $sql);
 //se tiver afetado alguma linha retorna sucesso
