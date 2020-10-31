@@ -84,7 +84,7 @@ $(document).ready(function () {
 
     });
     $('#lista-produtos').click(function () {
-        $('.pag').load("lista-produtos.php");
+        $('.pag').load("App/lista-produtos.php");
         $('.container-caixa').hide();
         return false;
     });
