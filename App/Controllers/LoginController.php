@@ -44,11 +44,12 @@ class LoginController
                  $user->validateLogin();
 
                  header('location: '.URL_BASE.'dashboard');
+
              }catch(\Exception $e){
              // se a senha ou email estiver errado o usuario sera redirecionado para home com o valor do erro na seção
                   header('location: '.URL_BASE);
                  $_SESSION['erro']= 'Email ou senha inválidos ';
-                 var_dump("erro");
+                 
              }
         } else {
             // se não existir um botão logar sera redirecionado para home
