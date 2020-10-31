@@ -8,9 +8,12 @@ use Src\Database\Connection;
 
 class Produto
 {
-    private $id,$codProduto,$ml,$classificao,$sexo,$marcas;
-    private $nome,$img,$valorCatalogo,$valorCompra,$valorVenda;
+
+
+    private $Id,$codProduto,$ml,$sexo,$nome,$img;
+    private $peso,$valorCatalogo,$valorCompra,$valorVenda;
     private $lucroaVista,$lucro2x,$lucro3x,$lucro4x,$lucro5x,$lucro6x,$dataCadastro,$url;
+    private $clasificacaoIdClasificacao,$marcasIdMarcas,$categoriaIdCategoria,$quantEstoque;
 
 
 
@@ -18,7 +21,7 @@ class Produto
     public static function  ultimosProdutos()
     {
         $conn = Connection::getConn();
-        $sql = "SELECT * FROM tb_produtos ORDER BY id DESC";
+        $sql = "SELECT * FROM produto ORDER BY id DESC";
         $stmt= $conn->prepare($sql);
         $stmt->execute();
             $res=[];
@@ -38,7 +41,7 @@ class Produto
     public static function consultaProduto($url)
     {
         $conn =Connection::getConn();
-        $sql = "SELECT * FROM tb_produtos where url = :url";
+        $sql = "SELECT * FROM produto where url = :url";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':url',$url );
         $stmt->execute();

@@ -7,6 +7,8 @@
  * @author: helenilson
  * update: 5/05/2020:
  */
+namespace App\Models;
+
 use Src\Database\Connection;
 
 class User
@@ -19,25 +21,26 @@ class User
 
     public function validateLogin()
     {
-        $senha = $this->password;
         $conn = Connection::getConn();
-        $sql='SELECT * FROM tb_user where email = :email ';
+
+
+        $sql='SELECT * FROM funcionario where email = :email ';
         $stmt= $conn->prepare($sql);
         $stmt->bindValue(':email',$this->email);
         $stmt->execute();
 
         if ($stmt->rowCount()) {
-              $result=$stmt->fetch();
-              $keyDb =$result['password'];
-           if (password_verify($senha,$keyDb)){
-            $_SESSION['id'] = $result['id'];
-            $_SESSION['user']=$result['nome'];
+              $result = $stmt->fetch();
+              $keyDb  = $result['password'];
+           
+           if (password_verify($this->getPassword(),$keyDb)){
+            $_SESSION['id']  = $result['idfuncionario'];
+            $_SESSION['user']= $result['nome'];
             return true;
             }
         }
 
         throw new \Exception('erro');
-
 
 
     }

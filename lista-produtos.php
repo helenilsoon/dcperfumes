@@ -2,14 +2,16 @@
 
 <?php
 
-session_start();
 if (isset($_SESSION['user'])) {
+
+    var_dump($_SESSION);
+    
     $usuario = $_SESSION['user'];
     require_once "con.php";
 
     $con = new Con();
     $link = $con->conectar();
-    $sql = "SELECT * FROM tb_produtos order by id asc";
+    $sql = "SELECT * FROM produto order by id asc";
 
     $res = mysqli_query($link, $sql);
 
@@ -89,8 +91,10 @@ if (isset($_SESSION['user'])) {
         </div>";
     } //fechamento do if
 } else {
-    header("location: index.php");
+    //header("location: index.php");
+        var_dump($_SESSION);
     die;
+
 }
 
 ?>

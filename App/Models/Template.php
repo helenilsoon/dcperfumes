@@ -23,6 +23,8 @@ class Template
         $paramets['DIR_CSS'] = DIR_CSS;
         $paramets['DIR_JS'] = DIR_JS;
         $paramets['DIR_FONT'] = DIR_FONT;
+
+        
         self::setParamets($paramets);
 
 

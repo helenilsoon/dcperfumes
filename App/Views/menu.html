@@ -3,13 +3,13 @@
         <img src='{{DIR_IMG}}Nova_LOGO_ Dcperfumes_160x160.p.jpg'>
     </div>
     <div class='menu-link'>
-        <a href='/'>Inicio</a>
-        <a href='/marcas'>Marcas</a>
-        <a href='/produtos'>Produtos</a>
-        <a href='/masculino'>Masculino</a>
-        <a href='/feminino'>Feminino</a>
+        <a href='{{URL_BASE}}'>Inicio</a>
+        <a href='{{URL_BASE}}marcas'>Marcas</a>
+        <a href='{{URL_BASE}}produtos'>Produtos</a>
+        <a href='{{URL_BASE}}masculino'>Masculino</a>
+        <a href='{{URL_BASE}}feminino'>Feminino</a>
         {% if usuario != '' %}
-        <a href='/dashboard'>Admin</a>
+        <a href='{{URL_BASE}}/dashboard'>Admin</a>
         <a>{{usuario}}</a>
         <a href="dashboard/logout">Sair</a>
 

@@ -15,6 +15,6 @@ class DashboardController
     {
         unset($_SESSION['user']);
         session_destroy();
-        header('location: /');
+        header('location: '.URL_BASE);
     }
 }

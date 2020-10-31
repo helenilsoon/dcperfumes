@@ -14,7 +14,7 @@ abstract class Connection
     {
         if (self::$conn == null) try {
             //        Variavel $conn armazena um obejto coneção
-            self::$conn = new \PDO('mysql: host=localhost; dbname=dcperfumes;','root','1234',
+            self::$conn = new \PDO('mysql: host=localhost; dbname=db_dcperfumes;','root','1234',
                 array(
                 \PDO::ATTR_PERSISTENT=>true,
 

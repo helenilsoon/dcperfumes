@@ -31,7 +31,7 @@
             <form id="pesquisa">
                 <div class="f_conjunto">
                     <input type="search" name="f_search" id="search" placeholder="Qual perfume? ">
-                    <button id="button">Pesquisar</button>
+                    <button id="button" >Pesquisar</button>
                 </div>
             </form>
 
@@ -56,7 +56,7 @@
 
                 </div>
                 <div class="info-produto">
-                    <a href="/produto/perfume/{{p.url}}">
+                    <a href="{{URL_BASE}}produto/perfume/{{p.url}}">
                         <p class="nome-produto"> {{p.nome}} de {{p.ml}} </p>
                         <p class="valor-compra">valor de compra R${{ p.valorCompra }}</p>
                         <p class="valor-venda"> R${{p.valorVenda}}</p>

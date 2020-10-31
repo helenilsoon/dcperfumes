@@ -11,6 +11,7 @@
  */
 
 //namespace App\Controllers;
+use App\Models\User;
 
 
 class LoginController
@@ -29,10 +30,10 @@ class LoginController
     {
         if (isset($_POST['btn-logar'])) {
             $email= isset($_POST['username'])?filter_var($_POST['username'],FILTER_SANITIZE_EMAIL):'';
-            $senha= isset($_POST['senha'])   ?$_POST['senha']:'';
-
+            $senha=isset($_POST['senha'])? filter_var($_POST['senha'],FILTER_SANITIZE_STRING):'';
+            
             $this->setEmail($email);
-            $this->setSenha($senha);
+            $this->setSenha($senha);       
 
 
              try{
@@ -42,15 +43,16 @@ class LoginController
                  $user ->setPassword($this->getSenha());
                  $user->validateLogin();
 
-                 header('location: /dashboard');
+                 header('location: '.URL_BASE.'dashboard');
              }catch(\Exception $e){
              // se a senha ou email estiver errado o usuario sera redirecionado para home com o valor do erro na seção
-//                 header('location: /');
+                  header('location: '.URL_BASE);
                  $_SESSION['erro']= 'Email ou senha inválidos ';
+                 var_dump("erro");
              }
         } else {
             // se não existir um botão logar sera redirecionado para home
-            header('location: / ');
+            header('location: /home ');
         }
 
     }

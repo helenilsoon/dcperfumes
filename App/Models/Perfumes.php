@@ -9,7 +9,7 @@ class Perfumes
 //    a palavra reservada static e pra pode acessar o metodo perfumes sem intância
  public static function RegistroPerfumes() {
     $con= \Connection::getConn();
-    $sql = "SELECT * FROM tb_produtos ORDER BY id DESC ";
+    $sql = "SELECT * FROM produto ORDER BY id DESC ";
 //    metodo prepare da con server
     $sql= $con->prepare($sql);
     $sql->execute();

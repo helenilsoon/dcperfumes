@@ -27,7 +27,7 @@ class Core
     {
         if (isset($urlGet['url'])) {
             // pega as requisiçõe e trasnfoma em um array
-
+           
             $this->url = explode('/', $urlGet['url']);
             // a primeira e o controle
             $this->controller = ucfirst($this->url[0]) . 'Controller';
@@ -56,7 +56,7 @@ class Core
             }
             if ($this->user) {
 
-                $permission_pg = ['DashboardController', 'HomeController', 'ProdutoController'];
+                $permission_pg = ['DashboardController', 'HomeController', 'ProdutoController','MarcasController'];
                 if (!isset($this->controller) || !in_array($this->controller, $permission_pg)) {
                     if (class_exists($this->controller)) {
                         switch ($this->controller) {
@@ -77,7 +77,7 @@ class Core
 
                 }
             } else {
-                $permission_pg = ['HomeController', 'LoginController', 'ErroController', 'ProdutoController','SearchController'];
+                $permission_pg = ['HomeController', 'LoginController', 'ErroController', 'ProdutoController','SearchController','MarcasController'];
                 if (!isset($this->controller) || !in_array($this->controller, $permission_pg)) {
                     if (!class_exists($this->controller)) {
                         $this->controller = 'ErroController';

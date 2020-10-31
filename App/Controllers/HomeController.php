@@ -27,9 +27,9 @@ class HomeController
         $paramets['produtos']= $produtos;
         $paramets['titulo'] = 'Dc perfume';
         $paramets['subtitulo']='Catalogo de perfume online';
-
+        
              
-        Template::CarregarTemplate($pasta,$arquivo,$paramets);
+        Template::CarregarTemplate($pasta,$arquivo,$paramets);  
 
         unset($_SESSION['erro']);
 

@@ -1,0 +1,700 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"res",
+				"results"
+			],
+			[
+				"s",
+				"stmt"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"fo",
+				"font-size\tproperty"
+			],
+			[
+				"els",
+				"else"
+			],
+			[
+				"session_d",
+				"session_destroy"
+			],
+			[
+				"pas",
+				"password"
+			],
+			[
+				"_",
+				"_POST"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"head",
+				"header"
+			],
+			[
+				"unse",
+				"unset"
+			],
+			[
+				"va",
+				"valorVenda"
+			],
+			[
+				"valo",
+				"valorCatalogo"
+			],
+			[
+				"pa",
+				"parseFloat"
+			],
+			[
+				"e",
+				"echo\techo \"…\""
+			],
+			[
+				"p",
+				"_POST"
+			],
+			[
+				"to",
+				"toFixed"
+			],
+			[
+				"u",
+				"unset"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"q",
+				"f_quantEstoque"
+			],
+			[
+				"se",
+				"select"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"ca",
+				"categoria"
+			],
+			[
+				"bor",
+				"border\tproperty"
+			],
+			[
+				"j",
+				"jquery-3"
+			],
+			[
+				"clas",
+				"clasificacao"
+			],
+			[
+				"sess",
+				"session_start"
+			],
+			[
+				"S",
+				"_SESSION"
+			],
+			[
+				"U",
+				"URL_BASE"
+			],
+			[
+				"sa",
+				"senha"
+			],
+			[
+				"filte",
+				"filter_var"
+			],
+			[
+				"co",
+				"conn"
+			],
+			[
+				"ur",
+				"urlGet"
+			],
+			[
+				"font",
+				"font-family\tproperty"
+			],
+			[
+				"tex",
+				"text-decoration\tproperty"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"vali",
+				"valido"
+			],
+			[
+				"di",
+				"digito2"
+			],
+			[
+				"pr",
+				"priDigito"
+			],
+			[
+				"campo",
+				"campoCpf"
+			],
+			[
+				"campoC",
+				"campoCpf"
+			],
+			[
+				"validar",
+				"validarCpf"
+			],
+			[
+				"ma",
+				"maxlength\tAttr"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"ds",
+				"display"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"lo",
+				"logo"
+			],
+			[
+				"ba",
+				"background\tproperty"
+			],
+			[
+				"box",
+				"box-shadow\tproperty"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"bo",
+				"border\tproperty"
+			],
+			[
+				"mar",
+				"margin\tproperty"
+			],
+			[
+				"c",
+				"campoNome"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"fel",
+				"flex-wrap\tproperty"
+			],
+			[
+				"hh",
+				"height\tproperty"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"whi",
+				"width\tproperty"
+			],
+			[
+				"texta",
+				"text-align\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/var/www/html/PROJETOS/Cursos-php/PDO/conn.php",
+			"settings":
+			{
+				"buffer_size": 463,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/html/PROJETOS/Cursos-php/PDO/resgitrar.php",
+			"settings":
+			{
+				"buffer_size": 574,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/html/PROJETOS/Cursos-php/PDO/index.php",
+			"settings":
+			{
+				"buffer_size": 4692,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\n$id = isset($_POST['id'])? $_POST['id']:'';\n\n$conn = new PDO(\"mysql:host=localhost;dbname=dcperfumes\",\"root\",\"1234\");\n$conn->beginTrasac tion();\n\n$stmt= $conn->prepare(\"DELETE FROM tb_usuarios WHERE id = :ID\");\n\n$stmt->bindParam(\":ID\",$id);\n$stmt->execute();\nheader(\"location: index.php\");",
+			"file": "/var/www/html/PROJETOS/Cursos-php/PDO/delete.php",
+			"file_size": 269,
+			"file_write_time": 132472080426420800,
+			"settings":
+			{
+				"buffer_size": 296,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/html/PROJETOS/Cursos-php/PDO/update.php",
+			"settings":
+			{
+				"buffer_size": 478,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/var/www/html/PROJETOS/Cursos-php/PDO"
+	],
+	"file_history":
+	[
+		"/var/www/html/PROJETOS/Cursos-php/PDO/index.php",
+		"/var/www/html/PROJETOS/Cursos-php/PDO/resgitrar.php",
+		"/var/www/html/PROJETOS/Cursos-php/PDO/teste.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Controllers/ProdutoController.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Views/menu.html",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Controllers/SearchController.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Controllers/MarcasController.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Controllers/HomeController.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/index.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Views/home.html",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/Core/Core.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Views/marcas.html",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Models/Produto.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/Config/config.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Views/index.php",
+		"/var/www/html/PROJETOS/ss/menu.php",
+		"/var/www/html/PROJETOS/ss/css/style.css",
+		"/var/www/html/PROJETOS/ss/js/script.js",
+		"/var/www/html/PROJETOS/ss/login.php",
+		"/var/www/html/PROJETOS/ss/index.php",
+		"/var/www/html/PROJETOS/ss/ControllerErro.php",
+		"/var/www/html/PROJETOS/ss/cadastro-produto.php",
+		"/var/www/html/PROJETOS/ss/autentication.php",
+		"/var/www/html/PROJETOS/ss/cad_prod.php",
+		"/var/www/html/PROJETOS/ss/ClassConexao.php",
+		"/var/www/html/PROJETOS/ss/produto.php",
+		"/var/www/html/PROJETOS/ss/lista-produtos.php",
+		"/var/www/html/PROJETOS/ss/verificar_registro.php",
+		"/var/www/html/PROJETOS/ss/sair.php",
+		"/var/www/html/PROJETOS/ss/.htaccess",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/Public/js/script-template.js",
+		"/var/www/html/PROJETOS/ss/js/script-template.js",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/Public/js/script.js",
+		"/var/www/html/PROJETOS/ss/update_produto.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/lista-produtos.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Controllers/LoginController.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Models/User.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Models/Template.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/.htaccess",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/cadastro-produto.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/Src/Database/Connection.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Controllers/DashboardController.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/Public/css/style.css",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Models/Search.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Models/Perfumes.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Models/ProdutoDao.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Controllers/index.php",
+		"/var/www/html/PROJETOS/Projeto_dcperfumes/App/Controllers/TemplateController.php",
+		"/var/www/html/atividades-01/index.html",
+		"/var/www/html/atividades-01/cafe_arabico_com_leite.html",
+		"/var/www/html/atividades-01/cappucino.html",
+		"/var/www/html/atividades-01/cha_chai.html",
+		"/var/www/html/atividades-01/mistura_de_casa.html",
+		"/var/www/html/atividades-01/css/style.css",
+		"/var/www/html/atividades-01/img/casa.svg",
+		"/var/www/html/atividades-01/img/casa.png",
+		"/var/www/html/ativadade-02/javascript.js",
+		"/home/helenilson/Downloads/Exercicio 2/index.html",
+		"/var/www/html/atividades-01/img/xicara-de-cafe-quente-com-coracoes.svg",
+		"/var/www/html/atividades-01/questao-01-helenilson_Oliveira.html",
+		"/home/helenilson/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"name",
+			"th",
+			"h",
+			"nome",
+			"img",
+			"'>\n",
+			"id",
+			"nome",
+			"login",
+			";",
+			"\"",
+			"echo \"",
+			"valorCompra",
+			"valorVenda",
+			"valorCompra",
+			"cod",
+			"resposta",
+			"f_cod",
+			"o_",
+			"codProduto",
+			"f_marcas",
+			"f_nome",
+			"f_cod",
+			"f_marcas",
+			"marcas",
+			"4x",
+			"2x",
+			"marcas"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/var/www/html/PROJETOS/Cursos-php/PDO"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/var/www/html/PROJETOS/Cursos-php/PDO/conn.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 463,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								216,
+								216
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/var/www/html/PROJETOS/Cursos-php/PDO/resgitrar.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 574,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								57,
+								57
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/var/www/html/PROJETOS/Cursos-php/PDO/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1786,
+								1786
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 612.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/var/www/html/PROJETOS/Cursos-php/PDO/delete.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								144,
+								144
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/var/www/html/PROJETOS/Cursos-php/PDO/update.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 478,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 305.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

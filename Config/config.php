@@ -1,6 +1,6 @@
 <?php
 // Caminho absoluto para pasta interna
-$pastaInterna = "";
+$pastaInterna = "PROJETOS/Projeto_dcperfumes/";
 define("URL_BASE", "http://{$_SERVER['HTTP_HOST']}/{$pastaInterna}");
 
 //Caminho absoluto para as requisições do servidor
